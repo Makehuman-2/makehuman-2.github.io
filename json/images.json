@@ -1,0 +1,31 @@
+{
+	"Splash Screen": {
+		"h": "https://64.media.tumblr.com/c99d82665570e4ad0ef497fc1ce08c71/d4209e909faa5e3d-71/s2048x3072/d20f48765b399bdb548ae5c70225f1393c443e33.pnj",
+		"t": "Splash Screen",
+		"a": "Elvaerwyn",
+		"c": "Created with Blender"
+	},
+	"Github Demo Picture": {
+		"h": "https://raw.githubusercontent.com/makehumancommunity/makehuman2/refs/heads/main/docu/images/screeny1.jpg",
+		"a": "black-punkduck",
+		"c": "Demo-Image used in github"
+	},
+	"Shader Test Wonderwoman": {
+		"h": "https://64.media.tumblr.com/f8964148b67929a0f1fefa440f2b44e3/1785f392673b16e3-38/s2048x3072/19f8d5301413710b000a200e0b8c453e860c62df.pnj",
+		"t": "Shader Test Wonderwoman",
+		"a": "black-punkduck",
+		"c": "Test in Makehuman2 with complex shaders, animations and animation correction"
+	},
+	"Beatrice Kiddo": {
+		"h": "https://64.media.tumblr.com/bbbe02a1cdb7b3c1e247dba162c01254/275e8d4c1d5c1a60-6b/s1280x1920/ad194a946e0f0317dde62a85445bf4a771c8fd92.pnj",
+		"t": "Beatrice Kiddo posing",
+		"a": "black-punkduck",
+		"c": "Main character from Kill Bill created in Makehuman2"
+	},
+	"Monty Python Gumby": {
+		"h": "https://64.media.tumblr.com/9737b8ee92eb5309f1899756f10b52f7/6fd8ecef9d4a68a5-ea/s1280x1920/67164128b7de3903acc2ae858e0de281e7978b72.pnj",
+		"t": "And now something completely different",
+		"a": "black-punkduck",
+		"c": "Monty Python Gumby (very british)"
+	}
+}

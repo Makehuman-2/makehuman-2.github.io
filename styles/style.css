@@ -1,0 +1,1006 @@
+.list-item {
+  list-style: none;
+  border: 12px solid transparent;
+  border-radius: 30px;
+  background-image:
+    linear-gradient(#646e71, #646e71),
+    linear-gradient(135deg, #1e1e1e 0%, #f58220 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  margin: 10px;
+  padding: 0 5px;
+  font-family: HELVETICA;
+  font-size: 24px;
+  color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(245, 130, 32, 0.6);
+}
+.list-item:hover {
+  background: linear-gradient(to bottom, rgba(245, 130, 0, 0.5), rgba(0, 0, 0, 0.7));
+  border-color: #f58200; /* Changes border to accent color */
+  transform: translateY(-5px); /* Lifts the whole container */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Adds shadow */
+}
+.search-results {
+  width: 60% !important;
+  padding: 10px;
+  background-color: #657074;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 3rem auto !important;
+  gap: .25rem;
+  font-size: .8rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 15px;
+  border: 8px solid transparent;
+  background-image: linear-gradient(#657074, #657074),
+                    linear-gradient(to right, black, orange);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  /* Drop Shadow */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+.search-results-container {
+  width: 60% !important;
+  padding: 10px;
+  background-color: #657074;
+  display: grid !important;
+  margin: 3rem auto !important;
+  gap: .25rem;
+  font-size: .8rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  border-radius: 5px;
+  outline: 2px solid white;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.frontpagecontainer {
+  display: flex;
+}
+.frontpagecontainer > div {
+ margin: 10px;
+}
+.frontpageleft {
+  flex-grow: 0.5;
+}
+.frontpageright {
+  border-radius: 5px;
+  flex-grow: 1;
+  background-color: #0;
+  color: #FFFFFF;
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: HELVETICA;
+  font-size: 28px;
+  color: #FFFFFF;
+}
+nav {
+  background-color: #8a979b;
+  padding: 25px;
+  font-size: 24px;
+  font-family: HELVETICA;
+  color: #1e1e1e;
+  height: 50px;
+}
+kbd { color: #ffffff; font-size: 90%; background-color: #7a877b; padding: 0 5px 0 5px; }
+pre { white-space:pre-line; display: inline; }
+table, th, td { border-collapse: collapse; padding: 10px; }
+a { color: #323232; }
+:root {
+    color-scheme: light dark;
+}
+a:visited {
+    /* Black for light, White for dark */
+    color: light-dark(White, #323232 );
+    text-decoration: none;
+}
+a:hover {
+    color: #f58220 !important; /* Optional: change color on hover */
+}
+footer { background-color: #1e1e1e !important; color: #FFFFFF !important;
+   display: flex;
+   justify-content: space-between; /* Pushes items to far left and far right */
+   align-items: center; /* Vertically centers items */
+   padding: 10px 20px;
+}
+div { padding: 0px 10px 0px 10px }
+.horgradient { height: 10px; background: linear-gradient(to right, #f58220, black); margin: 20px 20px; width: 85%; border-radius: 6px; }
+a#footer { color: #ffffff; }
+a#footer:hover { color: #f58220; }
+a#footer { background-color: #1e1e1e; }
+.smallcode {overflow-y: scroll; background-color: #1e1e1e; color: white; border: 6px solid #cc6d1e; margin: 10px; padding: 5px;}
+.contexttab { border-collapse: separate; border-spacing: 10px; }
+.explain { background-color: #657074;  border: 3px solid white; border-radius: 10px; padding: 10px; }
+.searchbut {
+  border:none;
+  outline: none;
+  background-color: #1e1e1e;
+  cursor:pointer;
+  padding: 3px 3px 3px 3px;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+}
+.searchinp {
+    padding: 15px;
+    border-radius: 5px 0px 0px 5px;
+    border-color: Black;
+    border-width: 4px;
+    border-style: solid;
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.searchinp:focus {
+  outline: none !important;
+  border: 1px solid rgb(245, 130, 32) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2),
+              0 0 10px rgba(245, 130, 32, 0.7) !important;
+}
+.entry-meta {
+    display: none;
+}
+.custom-page-hover a:hover {
+    color: orange !important; /* Your chosen hover color */
+}
+.spacer {
+    height: 50px;
+}
+.white-link {
+    color: white !important;
+    text-decoration: underline; /* Optional */
+}
+/* html inline images */
+img.idouble { vertical-align: middle; height: 2em; width: auto; margin-right: -1em; margin-left: -1em }
+img.icon { vertical-align: middle; height: 1.3em; width: auto; background-color: #f0f0f0; }
+/* md inline images */
+img[src*="#idouble"] { vertical-align: middle; height: 2em; width: auto; margin-right: -1em; margin-left: -1em }
+img[src*="#icon"] { vertical-align: middle; height: 1.3em; width: auto; background-color: #f0f0f0; }
+.banner-container {
+  height: 100vh; /* Sets height to viewport height */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.banner-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This forces the image to fill the space without stretching */
+  object-position: center; /* Centers the image */
+}
+.calendar {
+  width: 100%;
+  max-width: 300px; /* Compact sidebar size */
+  border-collapse: collapse;
+  text-align: center;
+  font-family: sans-serif;
+}
+.calendar th {
+  font-size: 0.8rem;
+  color: #888;
+  padding-bottom: 10px;
+}
+.calendar td {
+  padding: 10px 5px;
+  font-size: 1rem;
+}
+/* Base style for all date numbers */
+.calendar span, .calendar a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #333;
+}
+/* Modification for dates with posts */
+.calendar .has-posts {
+  font-weight: bold;
+  color: #007bff; /* Change to your brand color */
+  border-bottom: 2px solid #007bff; /* Subtitle indicator instead of a box */
+}
+.calendar .no-posts {
+  color: #ccc; /* Fade out dates without content */
+}
+/************************************
+timeline (UPDATED)
+************************************/
+.timeline {
+  position: relative;
+  /* Centering and Width */
+  margin: 40px auto;
+  max-width: 800px; /* Makes the container smaller on the sides */
+  width: 95%;       /* Safety for smaller screens */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 10px solid black;
+  background-clip: padding-box;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: -10px; bottom: -10px; left: -10px; right: -10px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #f58220, #000000);
+}
+/* Vertical Line: Gradient, Rounded, and Hover */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background: linear-gradient(to bottom, #f58220, #444, #000); /* Gradient */
+  top: 20px; bottom: 20px; /* Creates the rounded gap at top/bottom */
+  left: 10%;
+  margin-left: -3px;
+  border-radius: 10px; /* Rounded ends */
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+/* Vertical Line Hover */
+.timeline:hover::after {
+  width: 10px;
+  margin-left: -5px;
+  filter: brightness(1.2);
+}
+.timeline .container {
+  padding: 20px 10px 10px 40px;
+  margin-top: 10px;
+  position: relative;
+  width: 80%;
+  left: 10%;
+  z-index: 2;
+}
+/* Circles and Circle Hover */
+.timeline .container::after {
+  content: "";
+  position: absolute;
+  width: 25px; height: 25px;
+  left: -13px; /* Centers circle on line */
+  background-color: white;
+  border: 4px solid #f58220;
+  top: 0px;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+.timeline .container:hover::after {
+  background-color: #f58220;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(245, 130, 32, 0.6);
+}
+.timeline .container .date {
+  position: absolute;
+  top: 22px;
+  left: -15%;
+  font-size: large;
+  color: inherit; /* Keeps your site text color */
+}
+.timeline .container::before {
+  content: " ";
+  height: 0; position: absolute; top: 30px; width: 0; z-index: 2;
+  left: 26px; border: medium solid transparent;
+  border-right-color: #f58220;
+  border-width: 13px 13px 13px 0px;
+}
+.timeline .content {
+  box-shadow: 0 0 3px 3px #f58220;
+  background-color: #323232;
+  position: relative;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.timeline .content:hover { box-shadow: 0 0 3px 4px Black; }
+.timeline .content .title { padding: 5px 30px; font-weight: bold; display: inline-block; }
+.timeline .content .moment { color: #f58220; text-align: right; position: absolute; top: 0; right: 0; padding: 5px; }
+.timeline .content .body { padding: 5px 30px; }
+/* Responsive Logic */
+@media screen and (max-width: 600px) {
+  .timeline::after { left: 20px; }
+  .timeline .container { padding: 10px 10px 0px 40px; left: 20px; width: 85%; }
+  .timeline .container .date { font-size: small; position: relative; left: 0; top: 0; display: block; margin-bottom: 5px; transform: none; }
+  .timeline .container::after { left: -8px; }
+  .timeline .container::before { left: 16px; }
+}
+.timeline {
+    margin-bottom: 5rem; /* Adjust size as needed */
+}
+.timeline a {
+    color: white !important;
+    text-decoration: underline; /* Optional: keeps it looking like a link */
+}
+/* Sets the default state of the timeline links */
+.timeline a {
+    color: #FF6600 !important; /* A bright, deep orange */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Makes the hover effect smooth */
+}
+/* Sets the behavior when you mouse over the link */
+.timeline a:hover {
+    color: #FF9900 !important; /* Shifts to a brighter Orange */
+    text-decoration: underline; /* Optional: adds an underline on hover */
+}
+.timeline {
+  position: relative;
+  max-width: 1800px; /* Adjust this value to your preferred width */
+  width: 90%;      /* Ensures it stays responsive on smaller screens */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 10px solid black;
+  background-clip: padding-box;
+}
+/* Hover effect for the circles */
+.timeline .container:hover::after {
+  background-color: #f58220; /* Changes fill color */
+  transform: scale(1.2);      /* Makes it slightly larger */
+  border-color: #000;        /* Optional: change border color */
+  transition: all 0.3s ease; /* Makes the transition smooth */
+}
+/* Precise positioning for the date */
+.timeline .container .date {
+  left: -115px;       /* Pulls it left of the line */
+  width: 60px;       /* Fixed width for the date text */
+  text-align: right; /* Aligns text towards the line */
+  font-weight: bold;
+  white-space: nowrap;
+}
+/* Ensure the card doesn't overlap the date or line */
+.timeline .container {
+  padding-left: 50px;
+}
+html {
+  height: 100%; /* Allows body to use percentage heights if needed */
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Darker color now starts transitioning at 80% instead of 0% */
+  background-image: linear-gradient(to bottom, #8a979b 80%, #546165);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Firefox */
+html {
+  scrollbar-width: thick;
+  scrollbar-color: #FFFFFF #323232; /* Thumb, Track */
+}
+html:hover {
+  scrollbar-color: #555 #f58220; /* Thumb Hover, Track */
+}
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  border: 3px solid #f1f1f1; /* Creates padding around thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+.calendar {
+  position: static;
+  top: 0; /* Stays at the top of the viewport */
+  right: 0; /* Stays at the right side of the viewport */
+}
+.random-gallery-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 15px;
+    min-height: 320px;
+    align-items: center;
+    /* 1. Set the thick border and rounded corners */
+    border: 10px solid transparent;
+    border-radius: 20px;
+    /* 2. Layer 1: Grey background for the content area */
+    /*    Layer 2: Orange to Black gradient for the border area */
+    background-image:
+        linear-gradient(#646e71, #646e71),
+        linear-gradient(to right, #f58220, black);
+    /* 3. Tell the first layer to stay inside the border,
+          and the second to fill the border space */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+/* This targets any div inside the gallery box when hovered */
+.random-gallery-box div:hover {
+    transform: scale(1.17);
+    background-color: #1e1e1e;
+}
+/* Hover effect: Scale up and add an orange shadow */
+.random-gallery-item:hover .gallery-img {
+   transform: scale(1.1);
+   box-shadow: 0 0 15px 5px #f58220;
+   cursor: pointer;
+   transition: transform 0.4s ease, box-shadow 0.2s ease;
+}
+/* Hover effect: Scale up and add an orange shadow */
+.gallery-item:hover .gallery-img {
+   transform: scale(1.1);
+   box-shadow: 0 0 15px 5px #f58220;
+   cursor: pointer;
+   transition: transform 0.4s ease, box-shadow 0.2s ease;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 95%;
+  max-width: 1800px;
+  margin: 20px auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  border-radius: 50px;
+  background-color: #646e71;
+  /* --- DROP SHADOW --- */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Adds depth to the outer border */
+  /* --- GRADIENT BORDER SOLUTION --- */
+  border: 12px solid transparent;
+  background-image:
+    linear-gradient(#646e71, #646e71),
+    linear-gradient(135deg, #1e1e1e 0%, #f58220 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+/* Example: How to trigger the fade on hover */
+.gallery:hover {
+    border-color: rgba(0, 0, 0, 0); /* Fades black border to transparent */
+    box-shadow: inset 0 0 0 8px rgba(204, 109, 30, 0), 0px 10px 30px rgba(0, 0, 0, 0); /* Fades orange and shadow */
+}
+/* 2. The Item Wrapper & Square Aspect Ratio */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px; /* Keeps item corners rounded */
+    aspect-ratio: 1 / 1;
+    /* Updated to a slightly darker gray than before for better contrast */
+    background-color: #ccc;
+}
+/* 3. NEW: Make Images Fill Content and Fit Corners */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image to fill space without distortion */
+    display: block;    /* Removes bottom spacing */
+    border-radius: 5px; /* Ensures image covers item corners */
+}
+/* 3. The Link & Wrapper Fixes */
+.gallery-wrapper,
+.gallery-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.gallery-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+/* 4. The Overlay (Scrollbar Fix) */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ensures content centers vertically */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-gutter: stable; /* Prevents layout jump */
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+/* 5. Content Centering & Text Handling */
+.gallery-content {
+    width: 100%;
+}
+.gallery-title,
+.gallery-creator,
+.gallery-meta {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    margin: 10px 0;
+    width: 100%;
+    color: white;
+}
+.gallery-meta {
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 2px;
+    white-space: pre-wrap;
+}
+/* Responsive Breakpoints - Ensure it stays 6 wide on big screens,
+   but breaks down on smaller screens */
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 items for tablets */
+    }
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 items for phones */
+        gap: 10px;
+        padding: 10px;
+    }
+}
+.book-layout {
+  display: flex;
+  min-height: 85vh;
+  max-width: 1800px;
+  margin: 2rem auto;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+/* Left Page (TOC) */
+.book-left {
+  flex: 1;
+  background-color: #fdfdfd;
+  padding: 3rem;
+  border-right: 1px solid #eaeaea;
+  position: relative;
+}
+/* Right Page (Content) */
+.book-right {
+  flex: 1.0;
+  background-color: #fff;
+  padding: 3rem;
+}
+/* The "Open Book" Spine Effect */
+.book-spine-gradient {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, rgba(0,0,0,0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+.main-content {
+  position: relative; /* Required for absolute positioning of the overlay */
+  min-height: 100vh;
+  /* Remove the background properties from here if you want them on top */
+}
+.main-content::after {
+  content: "";
+  position: fixed; /* Keeps the background fixed as you scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .main-content {
+  position: relative; /* Required for absolute positioning of the overlay */
+  min-height: 100vh;
+  /* Remove the background properties from here if you want them on top */
+}
+.main-content::after {
+  content: "";
+  position: fixed; /* Keeps the background fixed as you scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Your image properties */
+  background-image: url('/images/open-book.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* Layering properties */
+  z-index: 10; /* Set higher than your text/foreground content */
+  pointer-events: none; /* Allows users to still click links/buttons 'behind' the image */
+  opacity: 0.5; /* Optional: adjust transparency so foreground content is still visible */
+}
+  /* Layering properties */
+  z-index: 10; /* Set higher than your text/foreground content */
+  pointer-events: none; /* Allows users to still click links/buttons 'behind' the image */
+  opacity: 0.5; /* Optional: adjust transparency so foreground content is still visible */
+}
+.icon-legend { list-style: none; padding: 0; }
+.icon-legend li { display: flex; align-items: center; margin-bottom: 10px; }
+.icon-legend .icon { margin-right: 10px; height: 1.3em; width: auto; }
+.icon-legend .icon svg { width: 100%; height: 100%; }
+/* The Bubble Container */
+.image-bubble {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 24px;
+  /* 1. Add a solid background color here to cover the center gradient */
+  background: white;
+  /* 2. This keeps the image and text above the border layer */
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* The Bubble Container */
+/* Hover effect */
+.image-bubble:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+/* Ensure images inside fit perfectly */
+.image-bubble img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 40px; /* Kept from your original code */
+  object-fit: cover;
+}
+/* Container for the whole legend - Made background more transparent */
+.icon-legend {
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background: linear-gradient(to bottom, rgba(245, 130, 0, 0.3), rgba(0, 0, 0, 0.5));
+  border-radius: 50px;
+  border: 16px solid #eee;
+  /* Added transition for smooth effect */
+  transition: all 0.3s ease-in-out;
+}
+/* --- Added Hover Effect --- */
+.icon-legend:hover {
+  background: linear-gradient(to bottom, rgba(245, 130, 0, 0.5), rgba(0, 0, 0, 0.7));
+  border-color: #f58200; /* Changes border to accent color */
+  transform: translateY(-5px); /* Lifts the whole container */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Adds shadow */
+}
+.icon-legend h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #fff; /* Lightened text for better contrast on dark */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* The Container */
+/* FORCE VISIBILITY */
+.icon-legend-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+  gap: 1px !important;
+  border: 1px solid #aaa !important; /* Outer frame */
+  list-style: none !important;
+  padding: 0 !important;
+  border-radius: 6px;
+  overflow: visible;
+  background: #aaa;
+}
+.icon-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px !important;
+  background: #fff !important;
+  /* Fakes the internal grid lines so they never disappear */
+    border-right: 1px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  box-shadow: none; /* Remove fake line shadow */
+  align-items: flex-start !important;
+}
+.icon-item::before, .icon-item::after {
+  display: none !important;
+}
+/* Fix the Hover Effect */
+.icon-item:hover {
+  z-index: 10;
+  border: 1px solid #f58200; /* Use border instead of inset shadow */
+  margin: -1px; /* Prevent shifting due to border */
+  background: #f0f0f0 !important;
+  box-shadow: inset 0 0 0 1px #f58200; /* Adds an inner 'border' highlight instead */
+}
+/* Image and Text */
+.icon-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  object-fit: contain;
+}
+/* Update this specific block in your code */
+.icon-item span {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  /* Added for word wrap */
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.2; /* Improves readability on wrapped text */
+}
+.page-body p span.inline-icon {
+    display: none !important;
+}
+.blog-list h2 a {
+    font-size: 1.0rem; /* Adjust this number to go smaller (e.g., 0.9rem) */
+    font-weight: 500;  /* Optional: makes the text a bit thinner */
+    line-height: 1.2;
+}
+/* This ensures the H2 container doesn't force a large height */
+.blog-list h2 {
+    margin: 0;
+    font-size: inherit;
+}
+ul li h2 a {
+    font-size: 1.1rem !important; /* Force this size */
+}
+.custom-color-block {
+  color: orange;
+  padding: 1rem;
+  border: 1px solid black;
+}
+.scroll-bubble-inner {
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 1.2rem;
+  color: black;
+  /* Added for better text readability */
+  line-height: 1.5;
+  word-wrap: break-word;
+  scrollbar-width: thin;
+  scrollbar-color: orange transparent;
+}
+.html-scroll-bubble {
+ line-height: 1.5;
+ max-height: 500px;
+ overflow-y: scroll;
+ overflow-x: scroll;
+ color: black;
+ background-color: #7a877b;
+ margin: 10px 50px 20px 10px;
+ padding: 1.2rem;
+ word-wrap: break-word;
+ scrollbar-width: thin;
+ scrollbar-color: orange transparent;
+}
+/* If a tag is too wide add this to its css */
+.tag {
+  max-width: 100%;
+  overflow-wrap: break-word; /* Breaks long words if they are wider than the container */
+}
+/* Container for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* The actual menu (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1e1e1e; /* Matches your border color */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+  border-top: 3px solid #f58220; /* Matches your orange accent */
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #333;
+}
+/* Show the menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Optional: if you want the link to stay underlined */
+.nav-active {
+    border-bottom: 2px solid #f58220;
+    text-decoration: none;
+    background: none !important;
+}
+.nav-active b {
+    color: #f58220 !important; /* Your theme's orange */
+    text-shadow: 0 0 5px rgba(245, 130, 32, 0.3); /* Subtle glow */
+}
+a img {
+    text-decoration: none;
+    border: none; /* Removes old-school blue borders */
+    display: block; /* Helps remove tiny "descender" gaps under images */
+}
+/* Specifically for your social links */
+a:has(img) {
+    text-decoration: none;
+}
+/* 1. Define the pulsing motion */
+@keyframes orange-pulse {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(255, 100, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(255, 100, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(255, 100, 0, 0.4);
+  }
+}
+/* 2. Trigger the animation only on hover */
+/* 1. Normal State: Subtle, slower pulse */
+.patreon-glow img {
+  border-radius: 50%;
+  /* Slower 2-second pulse for a "breathing" effect */
+  animation: orange-pulse 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+/* 2. Hover State: Intense, faster pulse */
+.patreon-glow:hover img {
+  /* Speed it up to 0.8s for a "heartbeat" effect */
+  animation: orange-pulse 0.8s infinite ease-in-out;
+  transform: scale(1.1); /* Slightly enlarge the image too */
+}
+@keyframes orange-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7);
+  }
+  70% {
+    /* Increased the spread from 10px to 20px for a bigger glow */
+    box-shadow: 0 0 0 20px rgba(255, 165, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+  }
+}
+.orange-glow-pulse {
+  color: #ff8c00; /* Dark MakeHuman Orange */
+  font-weight: bold;
+  /* Apply the animation: name | duration | timing | repetition | direction */
+  animation: orangePulse 2s ease-in-out infinite alternate;
+}
+@keyframes orangePulse {
+  from {
+    text-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500;
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 0 0 15px #ff8c00, 0 0 30px #ffa500, 0 0 45px #ff4500;
+    transform: scale(1.05); /* Subtle scale pulse */
+  }
+}
+css.orange-glow-pulse {
+  color: #ff8c00;
+  font-weight: bold;
+  /* Adds a 1px solid black outline */
+  -webkit-text-stroke: 1px black;
+  animation: orangePulse 2s ease-in-out infinite alternate;
+}
+@keyframes orangePulse {
+  from {
+    text-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500;
+  }
+  to {
+    /* Glow stays behind the black outline */
+    text-shadow: 0 0 15px #ff8c00, 0 0 30px #ffa500, 0 0 45px #ff4500;
+  }
+}
+/* Updated Active Style */
+.active {
+  background-color: #f58220;
+  color: white;
+  font-weight: bold;
+  position: relative; /* Ensures shadow depth displays correctly */
+  animation: pulse-glow 2.5s infinite;
+}
+/* Updated Pulsing Animation */
+@keyframes pulse-glow {
+  0% {
+    /* Subtle inner glow and tight outer glow */
+    box-shadow:
+      inset 0 0 10px rgba(255, 157, 71, 0.5),
+      0 0 0 0 rgba(255, 157, 71, 0.7);
+  }
+  70% {
+    /* Deep inner glow and wide, lighter outer pulse */
+    box-shadow:
+      inset 0 0 20px rgba(255, 157, 71, 0.2),
+      0 0 0 15px rgba(255, 157, 71, 0);
+  }
+  100% {
+    box-shadow:
+      inset 0 0 10px rgba(255, 157, 71, 0),
+      0 0 0 0 rgba(255, 157, 71, 0);
+  }
+}
+.day {
+  border: 4px solid #323232;
+  padding: 10px;
+  border-radius: 8px;
+  /* Standard drop shadow for all boxes */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.active {
+  background-color: #f58220;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  border-radius: 8px;
+  /* Apply animation */
+  animation: pulse-glow 2.5s infinite;
+}
+@keyframes pulse-glow {
+  0% {
+    /* Layers: 1. Inner light, 2. Pulse start, 3. Standard drop shadow */
+    box-shadow:
+      inset 0 0 10px rgba(255, 157, 71, 0.5),
+      0 0 0 0 rgba(255, 157, 71, 0.7),
+      0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  70% {
+    /* Layers: 1. Deep inner light, 2. Expanded pulse, 3. Standard drop shadow */
+    box-shadow:
+      inset 0 0 20px rgba(255, 157, 71, 0.2),
+      0 0 0 15px rgba(255, 157, 71, 0),
+      0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow:
+      inset 0 0 10px rgba(255, 157, 71, 0),
+      0 0 0 0 rgba(255, 157, 71, 0),
+      0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+<style>
+    .recent_tags-box {
+        margin-top: 20px;
+    }
+    .tags-title {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .tags-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    .tag-button {
+        background-color: #eee;
+        padding: 5px;
+        border-radius: 6px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.8em;
+        /* Start with dark text */
+        color: #333 !important;
+        display: block;
+        border: 2px solid #6a3304;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        /* Smoothly transition background AND text color */
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+    .tag-button:hover {
+        background-color: #f58220;
+        /* Shift text to white so it doesn't "disappear" */
+        color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+</style>
