@@ -58,7 +58,7 @@
       <font color="#000000">Join us on...&nbsp;</font>
     </td>
     <td>
-      <a href="https://discord.gg/tnhDFdVFyC" style="text-decoration: none;">
+      <a href="https://discord.gg/gMj7FSprt4" style="text-decoration: none;">
           <img src="/icons/external_icons/discord_logo.png" width="50" style="vertical-align: middle;">
       </a>
     </td>
@@ -666,7 +666,7 @@ We have again exceeded all expectations and shall continue to do so!
   <div class="retro-monitor">
     <div id="model-name" class="model-name-display">INITIALIZING...</div>
     <div class="screen-overlay"></div>
-    <model-viewer id="main-viewer" src="/models/coralantennae.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+    <model-viewer id="main-viewer" src="/models/ww-corsage.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
   </div>
   <div class="control-panel">
     <button class="retro-btn reset-btn" onclick="resetCamera()" title="Reset">RST</button>
@@ -677,20 +677,10 @@ We have again exceeded all expectations and shall continue to do so!
 </div>
 <script>
   const metaMap = {
-        "armadillohat1.glb": "armadillohat1.glb",
-        "coralantennae.glb": "coralantennae.glb",
-        "elvs_goddess_dress1.glb": "elvs_goddess_dress1.glb",
-        "elvs_goddess_dress2.glb": "elvs_goddess_dress2.glb",
-        "elvs_goddess_dress3.glb": "elvs_goddess_dress3.glb",
-        "elvs_goddess_dress4.glb": "elvs_goddess_dress4.glb",
-        "elvs_goddess_dress5.glb": "elvs_goddess_dress5.glb",
-        "elvs_goddess_dress6.glb": "elvs_goddess_dress6.glb",
-        "elvs_goddess_dress7.glb": "elvs_goddess_dress7.glb",
-        "elvs_goddess_dress8.glb": "elvs_goddess_dress8.glb",
-        "elvs_goddess_dress9.glb": "elvs_goddess_dress9.glb",
-        "elvs_maiden_dress1.glb": "elvs_maiden_dress1.glb",
-        "elvs_maiden_dress2.glb": "elvs_maiden_dress2.glb",
-        "jackolantern.glb": "jackolantern.glb",
+        "elvs_mermaid_fishtail.glb": "elvs_mermaid_fishtail.glb",
+        "ww-corsage.glb": "ww-corsage.glb",
+        "ww-sword.glb": "ww-sword.glb",
+        "ww-tiara.glb": "ww-tiara.glb",
   };
   const modelList = Object.keys(metaMap);
   function updateDisplayName(path) {
@@ -717,7 +707,7 @@ We have again exceeded all expectations and shall continue to do so!
     viewer.jumpCameraToGoal();
   }
   document.addEventListener("DOMContentLoaded", () => {
-    const initialFile = "\/models\/coralantennae.glb";
+    const initialFile = "\/models\/ww-corsage.glb";
     updateDisplayName(initialFile);
   });
 </script>
