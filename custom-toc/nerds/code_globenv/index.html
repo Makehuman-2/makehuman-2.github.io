@@ -78,213 +78,176 @@
        style="width:100%; height:100%; border-top: 8px solid #1e1e1e; border-bottom: 5px solid #f58220; display: block;">
 </header>
 <p id="datestring">Current: Month Day, Year</p>
-  <h2>9.3.6 Base JSON file</h2>
+  <h2>9.1.1 Code of core/globenv.py</h2>
   <div class="page-body">
-The <kbd>base.json</kbd> file defines <b>all attributes of a certain base mesh</b>. It provides a structured way to organize different features of MakeHuman2 which should be flexible. It is used to e.g. configure the randomizer or the availability of asset-menus for a certain base.
+<kbd>core/globenv</kbd> provides <b>all common global elements</b>. These can be used everwhere in the program.
 <!-- more -->
-<h2>File Locations and loading order</h2>
-Each basemesh has its own <kbd>base.json</kbd> file, which can be in two different locations:
-<xmp class="smallcode"><UserDir>/data/base/<basename>/base.json
-<SystemDir>/data/base/<basename>/base.json
-</xmp>
-<ul><li>&lt;basename&gt; is e.g. <kbd>hm08</kbd>, <kbd>mh2bot</kbd>, <kbd>fantasy</kbd> .</li>
-<li>&lt;UserDir&gt; is checked first.</li>
+<h2>class globalObjects</h2>
+It is the main class to contain "real globals", so variables which might be referenced everywhere.
+<p>
+If we need further, they will be defined here. To be sure they exist, the value will either be None, a certain number, an
+empty string or an empty dictionary or list. Variables must be mentioned here and should never be injected to avoid
+clashes. It is also easier to understand code. The elements are either added in __init__ or in reset(), the function
+called by init and which can be called, when system e.g. loads different mesh.
+<p>
+Classical this class is referenced with the parameter glob. It is mostly a parameter of all modules to make it accessible.
+<p>
+A hasattr is not needed for all mentioned elements.
+<h3>Available Variables Reference</h3>
+<table class="contexttab">
+<tr>
+<td>env</td>
+<td class="explain">a pointer to environment, allows e.g. to access glob.env.logLine or access of all environment paramters and functions. env.last_error was the error of last load function etc.
+</td>
+</tr>
+<tr>
+<td>app</td>
+<td class="explain">pointer to QApplication
+</td>
+</tr>
+<tr>
+<td>shaderInit</td>
+<td class="explain">a dictionary containing all shader pre-definitons filled from a shader file data/shaders/shader.json
+</td>
+</tr>
+<tr>
+<td>subwindows</td>
+<td class="explain">a dictionary of opened subwindows
+</td>
+</tr>
+<tr>
+<td>MainWindow</td>
+<td class="explain">pointer to mainwindow (which is the global window with the 3 columns)
+</td>
+</tr>
+<tr>
+<td>openGLWindow</td>
+<td class="explain">pointer to QOpenGLWidget defined in opengl/main.py, our "canvas". Here you will find all graphical objects.
+<ul>
+<li>camera</li>
+<li>light</li>
+<li>objects</li>
+<li>scene</li>
+<li>shaders</li>
+<li>and a function to redraw all buffers is done with Tweak()</li>
 </ul>
-<h3>Property Reference</h3>
-<table class="contexttab">
-<tr>
-<td>equipment<p>array of strings, optional</td>
-<td class="explain">An array of tools which are presented as assets. If it is not set it is only "clothes".
-It is used to show different menus and can avoid empty menus. E.g. a robot has no "tongue".
-</td>
-<td><xmp class="smallcode">Example:
-[ "clothes", "hair", "eyes", "eyebrows",
-    "eyelashes", "teeth", "tongue", "proxy" ]
-</xmp>
 </td>
 </tr>
 <tr>
-<td>head-pattern<p>array of strings, optional</td>
-<td class="explain">An array of patterns used for all morphs which can be used for head.
-It is used for loading only head-targets.
-</td>
-<td><xmp class="smallcode">Example:
-["face|", "user|cheek", "user|chin", "user|ear",
-    "user|eye", "user|mouth", "user|nose", "user|teeth" ]
-</xmp>
+<td>openGLBlock</td>
+<td class="explain">global bool to avoid openGL output e.g. when texture is deleted etc. It is blocked while loading etc.
 </td>
 </tr>
 <tr>
-<td>measure<p>dict, optional</td>
-<td class="explain">Dictionary used by character measurement to create entries from slider-values of certain morphs.
-</td>
-<td><xmp class="smallcode">Example:
-{
-   "gender":"macrodetails/Gender",
-   "age": "macrodetails/Age",
-   "size":  "none",
-   "chest": "measure/measure-bust-circ-decr|incr",
-   "waist": "measure/measure-waist-circ-decr|incr",
-   "hips":  "measure/measure-hips-circ-decr|incr",
-   "underbust": "measure/measure-underbust-circ-decr|incr"
-}
-</xmp>
+<td>openGLWinUpdate</td>
+<td class="explain">global bool to allow only openGL update, should avoid double updates
 </td>
 </tr>
 <tr>
-<td>mhm<p>string, required</td>
-<td class="explain">Name of the mhm file, which is used to display default character. It is found in same folder and usually "base.mhm"
-</td>
-<td><xmp class="smallcode">Example:
-"base.mhm"
-</xmp>
+<td>midColumn</td>
+<td class="explain">pointer to mid column mostly used for some changes like poseView(bool)
 </td>
 </tr>
 <tr>
-<td>modifier-presets<p>dict, optional</td>
-<td class="explain">Dictionary to change the modifiers to certain values used as default for startup or reset.
-</td>
-<td><xmp class="smallcode">Example:
-{
-      "macrodetails/Gender": 0.5,
-      "macrodetails/Age": 0.5,
-      "macrodetails-universal/Muscle": 0.5,
-      "macrodetails-universal/Weight": 0.5,
-      "macrodetails-height/Height": 0.5,
-      "macrodetails-proportions/BodyProportions": 0.5,
-      "macrodetails/Asian": 0.33,
-      "macrodetails/Caucasian": 0.33,
-      "macrodetails/African": 0.33,
-      "breast/BreastSize": 0.5,
-}
-</xmp>
+<td>centralWidget</td>
+<td class="explain">is the whole widget used for e.g. Warnings and Errorboxes, a pyside6 problem, that these boxes
+cannot be connected to subwindows.
 </td>
 </tr>
 <tr>
-<td>numverts<p>int, required</td>
-<td class="explain">An integer which represents the number of vertices.
-It is used in the mesh-compiler.
-</td>
-<td><xmp class="smallcode">Example:
-19158
-</xmp>
+<td>baseClass</td>
+<td class="explain">the current baseclass
 </td>
 </tr>
 <tr>
-<td>parentmesh<p>string, optional</td>
-<td class="explain">Allows to e.g. import assets for the parent mesh, so fantasy allow the import of hm08 assets.
-</td>
-<td><xmp class="smallcode">Example:
-"hm08"
-</xmp>
+<td>closing</td>
+<td class="explain">bool value, application is closing (exit yes/no) needs that not to stay in infinite loop
 </td>
 </tr>
 <tr>
-<td>pose-skeleton<p>string, optional</td>
-<td class="explain">Name of the mhskel-file used as pose-skeleton. Should be there, otherwise no posing is possible.
-</td>
-<td><xmp class="smallcode">Example:
-"default.mhskel"
-</xmp>
+<td>textureRepo</td>
+<td class="explain">the repository of the loaded textures
 </td>
 </tr>
 <tr>
-<td>target-opposites<p>dict, required</td>
-<td class="explain">A dictionary which creates the opposites for sliders, like "decr" versus "incr".
-It is used to build pairs for the morphs.
-</td>
-<td><xmp class="smallcode">Example:
-"target-opposites": {
-     "decr": "incr",
-     "down": "up",
-     "in": "out",
-     "backward":"forward",
-     "concave": "convex",
-     "compress": "uncompress",
-     "pointed": "triangle",
-     "square": "round"
-}
-</xmp>
+<td>apiSocket</td>
+<td class="explain">contains the connected socket or is none
 </td>
 </tr>
 <tr>
-<td>visible groups<p>array of strings, required</td>
-<td class="explain">Name of vertex groups which are displayed on screen, the other groups are hidden (e.g. helper for clothes). It will be normally just one group, but
-can be used to e.g. display helpers for debugging.
-</td>
-<td><xmp class="smallcode">Example:
-[ "body", "wings"]
-</xmp>
-</td>
-</tr>
-</table>
-<h3>Property Reference Random</h3>
-The random block is used to configure the randomizer, it is encapsulated like this:
-<xmp class="smallcode">Example:
-"random": {
-    "nonsym": ["trans-in", "trans-out"],
-    ...
-}
-</xmp>
-<table class="contexttab">
-<tr>
-<td>gender<p>string, optional</td>
-<td class="explain">Name of the gender item.
-</td>
-<td><xmp class="smallcode">Example:
-"Gender"
-</xmp>
+<td>wireframemode</td>
+<td class="explain">contains the mode the wireframe is painted
 </td>
 </tr>
 <tr>
-<td>groups<p>dictionary, required</td>
-<td class="explain">Dictionary of the selectable random groups with preselection when tool is started.
-</td>
-<td><xmp class="smallcode">Example:
-{
-  "main": true,
-  "face": true,
-  "torso": true,
-  "arms": true,
-  "legs": true,
-  "gender|breast": false,
-  "shapes|female shapes": false,
-  "shapes|female hormonal": false,
-  "shapes|male shapes": false,
-  "shapes|fale hormonal": false
-}
-</xmp>
+<td>project_changed</td>
+<td class="explain">is true when sth. has changed
 </td>
 </tr>
-<tr>
-<td>ideal<p>string, optional</td>
-<td class="explain">Name of the ideal item.
-</td>
-<td><xmp class="smallcode">Example:
-"Proportions"
-</xmp>
-</td>
 </tr>
 <tr>
-<td>nonsym<p>array of strings, optional</td>
-<td class="explain">non-symmetrical morphs. Here the suffixes of non-symmetrical morphs (targets) are mentioned.
-</td>
-<td><xmp class="smallcode">Example:
-["trans-in", "trans-out"]
-</xmp>
+<td>cachedInfo</td>
+<td class="explain">the complete current cache
 </td>
 </tr>
+</tr>
 <tr>
-<td>rules<p>dictionary of rules, optional</td>
-<td class="explain">Special item to build a logic to avoid certain random combinations. The rules for each key are also a dictionary,
-each rule must be true for a certain morph. The rule will be evaluated using eval(), parameter is 'x'.
+<td>Targets</td>
+<td class="explain">pointer to all targets
 </td>
-<td><xmp class="smallcode">Example:
-{
-      "Stomach Pregnant": {"Gender": "x < 0.5", "Age": "0.2 < x < 0.75" }
-}
-This means: the character must be female and of a certain age.
-</xmp>
+</tr>
+</tr>
+<tr>
+<td>targetCategories</td>
+<td class="explain">contains the category object
+</td>
+</tr>
+</tr>
+<tr>
+<td>targetMacros</td>
+<td class="explain">contains macrodefinitions (JSON structure, if available)
+</td>
+</tr>
+</tr>
+<tr>
+<td>targetRepo</td>
+<td class="explain">contains a dictionary of available targets
+</td>
+</tr>
+</tr>
+<tr>
+<td>macroRepo</td>
+<td class="explain">contains a dictionary of available macros
+</td>
+</tr>
+</tr>
+<tr>
+<td>missingTargets</td>
+<td class="explain">contains a list of missing targets after load
+</td>
+</tr>
+</tr>
+<tr>
+<td>parallel</td>
+<td class="explain">for parallel processing. Should avoid more than one process at the time is running in parallel
+</td>
+</tr>
+</tr>
+<tr>
+<td>lastdownload</td>
+<td class="explain">will contain the filename of last downloaded file
+</td>
+</tr>
+</tr>
+<tr>
+<td>textSlot</td>
+<td class="explain">array of text slots for graphical window, like size age etc.
+</td>
+</tr>
+</tr>
+<tr>
+<td>custom_props_list</td>
+<td class="explain">extension for "studio" assets
 </td>
 </tr>
 </table>
